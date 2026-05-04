@@ -1,0 +1,192 @@
+/* Section heading centered */
+.section:has(.product-picker) .default-content-wrapper h2 {
+  text-align: center;
+}
+
+/* Product Picker Block */
+.product-picker {
+  --picker-gap: 24px;
+  --picker-radius: 24px;
+  --picker-padding: 24px;
+  --picker-shadow: 0 4px 8px rgba(20, 19, 18, 0.04);
+  --picker-card-bg: #fff;
+  --picker-accent-bg: #ffc421;
+  --picker-cta-bg: #000;
+  --picker-cta-color: #fff;
+}
+
+.product-picker > div {
+  background: var(--picker-card-bg);
+  border-radius: var(--picker-radius);
+  box-shadow: var(--picker-shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-picker > div:nth-child(2) {
+  background: var(--picker-accent-bg);
+}
+
+/* Card inner padding */
+.product-picker > div > div {
+  padding: var(--picker-padding);
+}
+
+/* Image cells: no padding for full-bleed image at card top */
+.product-picker > div > div.card-image {
+  padding: 0;
+}
+
+.product-picker > div > div.card-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Card 1: navigation links */
+.product-picker > div:first-child h3 {
+  font-family: var(--body-font-family, sans-serif);
+  font-size: 24px;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.product-picker > div:first-child ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.product-picker > div:first-child ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 14px;
+  color: var(--link-color, #291d18);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.product-picker > div:first-child ul li:last-child a {
+  border-bottom: none;
+}
+
+.product-picker > div:first-child ul li a::after {
+  content: "›";
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.product-picker > div:first-child ul li a:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+/* Card icon cell (card 2) — add padding for icon */
+.product-picker > div:nth-child(2) > div.card-image {
+  padding: var(--picker-padding) var(--picker-padding) 0;
+}
+
+.product-picker > div:nth-child(2) > div.card-image img {
+  width: 48px;
+  height: 48px;
+}
+
+/* Card 3 image: full-bleed at top */
+.product-picker > div:nth-child(3) > div.card-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Card headings (h3) for card 2 & 3 */
+.product-picker > div:nth-child(2) h3,
+.product-picker > div:nth-child(3) h3 {
+  font-size: 32px;
+  font-weight: 400;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+/* Card description paragraphs */
+.product-picker > div:nth-child(2) p,
+.product-picker > div:nth-child(3) p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+/* CTA buttons - primary (card 2) */
+main .product-picker a.button.primary:any-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--picker-cta-bg);
+  color: var(--picker-cta-color);
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  margin-top: auto;
+}
+
+/* CTA buttons - secondary (card 3) */
+main .product-picker a.button.secondary:any-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: transparent;
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  border: 2px solid #000;
+  margin-top: auto;
+}
+
+/* Push CTA to bottom of card */
+.product-picker > div > div:last-child {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.product-picker > div > div:last-child .button-wrapper {
+  margin-top: auto;
+}
+
+/* Mobile: stack cards */
+.product-picker > div {
+  margin-bottom: var(--picker-gap);
+}
+
+/* Desktop: 3-column layout */
+@media (width >= 900px) {
+  .product-picker {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--picker-gap);
+  }
+
+  .product-picker > div {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,43 @@
+.help {
+  --help-padding: 24px 0;
+  --help-text-color: rgb(0, 0, 0);
+  --help-link-color: rgb(41, 29, 24);
+
+  padding: var(--help-padding);
+  text-align: center;
+  color: var(--help-text-color);
+}
+
+.help h2 {
+  font-family: var(--heading-font-family, sans-serif);
+  font-size: var(--heading-font-size-l, 40px);
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 0.25em;
+}
+
+.help p {
+  font-size: 16px;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.help > div:last-child {
+  margin-top: 16px;
+}
+
+.help > div:last-child > div {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.help a:any-link {
+  color: var(--help-link-color);
+  text-decoration: underline;
+  font-size: 16px;
+}
+
+.help a:hover {
+  text-decoration: none;
+}
