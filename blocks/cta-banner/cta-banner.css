@@ -1,0 +1,75 @@
+.section:has(.cta-banner-wrapper) {
+  margin: 24px 0;
+}
+
+.cta-banner-wrapper {
+  max-width: 100% !important;
+  padding: 0 30px !important;
+}
+
+.cta-banner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 1132px;
+  margin: 0 auto;
+}
+
+.cta-banner > div {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  min-height: 128px;
+}
+
+.cta-banner > div > div:first-child {
+  flex: 0 0 129px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 0;
+}
+
+.cta-banner > div > div:first-child img {
+  max-width: 100%;
+  max-height: 80px;
+  object-fit: contain;
+}
+
+.cta-banner > div > div:last-child {
+  flex: 1;
+  padding: 24px;
+}
+
+.cta-banner h3 {
+  font-family: var(--body-font-family);
+  font-size: 32px;
+  font-weight: 400;
+  margin: 0 0 8px;
+  color: var(--text-color);
+}
+
+.cta-banner p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.cta-banner a {
+  color: var(--link-color);
+  text-decoration: underline;
+  font-size: 16px;
+}
+
+@media (width >= 900px) {
+  .cta-banner {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .cta-banner > div {
+    flex: 1;
+  }
+}
