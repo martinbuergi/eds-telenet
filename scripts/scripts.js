@@ -196,8 +196,6 @@ async function loadLazy(doc) {
   if (hasQE) import('../tools/quick-edit/quick-edit.js').then((mod) => mod.default());
 })();
 
-}
-
 /**
  * Loads everything that happens a lot later,
  * without impacting the user experience.
